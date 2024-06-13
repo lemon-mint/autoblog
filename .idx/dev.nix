@@ -11,6 +11,8 @@
     pkgs.python311Packages.pip
     pkgs.bun
     pkgs.nodejs_22
+    pkgs.flex
+    pkgs.bison
   ];
 
   # Sets environment variables in the workspace
@@ -45,6 +47,7 @@
       onCreate = {
         # Example: install JS dependencies from NPM
         # npm-install = "npm install";
+        stringer-install = "go install golang.org/x/tools/cmd/stringer@latest";
       };
       # Runs when the workspace is (re)started
       onStart = {
